@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
+ const mongoose = require("mongoose");
 const config = require("config");
 const debug = require("debug")("app:db");
 
 mongoose
-  .connect(config.get("MONGODB_URI")) // Removed deprecated options
+  .connect(`${config.get("MONGODB_URI")}/scatch`) 
   .then(() => debug("Connected to MongoDB..."))
   .catch((err) => debug("Could not connect to MongoDB...", err));
 
